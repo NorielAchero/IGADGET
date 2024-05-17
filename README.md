@@ -9,6 +9,8 @@ If you want to edit, create your own database. Follow these names of db and tabl
 
 If you want to load the data (no images included in the CSV), you can run the 'admin/insert.php' in the URL (auto import of CSV file to the table).
 
+Link for the images: https://drive.google.com/drive/folders/1aBnzRUbeQeA8MSyY7CKbyMKVPFjQzPMj?usp=drive_link
+
 
 ## Instructions for Angelica 
 
