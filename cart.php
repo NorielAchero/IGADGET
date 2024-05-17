@@ -50,94 +50,92 @@
     </nav>
 
     <div class="center-div">
-        <div class="row prod d-flex align-items-center">
-            <div class="col-md-4 text-center">
-                <div class="product-images">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/2019-honda-civic-sedan-1558453497.jpg" alt="Product Image">
-                </div>
-            </div>
-            <div class="col-md-8 desc mx-auto" >
-                <div class="product-description">
-                    <p style = "font-size: large;"><b>prodName</b></p>
-                    <p>prodDescription | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a maximus ipsum. </p>
-                    <p>Category</p>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <button class="btn btn-delete"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p>Price 999.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
 
-        <div class="row prod d-flex align-items-center">
-            <div class="col-md-4 text-center">
-                <div class="product-images">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/2019-honda-civic-sedan-1558453497.jpg" alt="Product Image">
-                </div>
-            </div>
-            <div class="col-md-8 desc mx-auto" >
-                <div class="product-description">
-                    <p style = "font-size: large;"><b>prodName</b></p>
-                    <p>prodDescription | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a maximus ipsum. </p>
-                    <p>Category</p>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <button class="btn btn-delete"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p>Price 999.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row prod d-flex align-items-center">
-            <div class="col-md-4 text-center">
-                <div class="product-images">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/2019-honda-civic-sedan-1558453497.jpg" alt="Product Image">
-                </div>
-            </div>
-            <div class="col-md-8 desc mx-auto" >
-                <div class="product-description">
-                    <p style = "font-size: large;"><b>prodName</b></p>
-                    <p>prodDescription | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a maximus ipsum. </p>
-                    <p>Category</p>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <button class="btn btn-delete"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p>Price 999.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        cart();
 
 
-        <div class = "row row-prod" style=" margin-top: 20px;">
-            <div class = "col-md-6 text-center">
-            Subtotal
-            </div>
-            <div class = "col-md-6 text-center">
-                Total
-            </div>
-        </div>
+        ?>
+
+
+
 
         <div class="row" style="margin-top: 70px;">
             <div class="col-md-12 text-center">
-                <button class="btn checkout" onclick="window.location.href='checkout.php';">Proceed to Checkout</button>
+                <button class="btn checkout" onclick="window.location.href='checkout-cart.php';">Proceed to Checkout</button>
             </div>
         </div>
 
     </div>
 </body>
 </html>
+
+
+<?php
+    function cart(){
+        include("admin/includes/sqlconnection.php");
+
+        $sql = "SELECT * FROM cart";
+
+        $result = $conn->query($sql);
+
+        $subtotal = 0.00;
+
+        if ($result->num_rows > 0) {
+
+            while ($row = $result->fetch_assoc()) {
+            $subtotal = $subtotal + $row['price'];
+                echo "
+                <div class='row prod d-flex align-items-center'>
+            <div class='col-md-4 text-center'>
+                <div class='product-images'>
+                    <img src='admin/uploads/". $row['image']. "' alt='Product Image'>
+                </div>
+            </div>
+            <div class='col-md-8 desc mx-auto'>
+                <div class='product-description'>
+                    <p style = 'font-size: large;'><b>" . $row['prodname'] . " </b></p>
+                    <p>" . $row['proddesc'] . "</p>
+                    <p>" . $row['category'] . "</p>
+                    <p>" . $row['id'] . "</p>
+                    <div class='row'>
+                        <div class='col-xs-6'>
+                            <a class='btn btn-delete' href = 'admin/controller.php?control=true&table=cart&id=".$row['id']."'><span class='glyphicon glyphicon-trash'></span> Delete</a>
+                        </div>
+                        <div class='col-xs-6 text-right'>
+                            <p>" . $row['price'] . "</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+                ";
+
+
+            }
+
+            echo"
+                <div class = 'row row-prod' style=' margin-top: 20px;'>
+                <div class = 'col-md-6 text-center'>
+                Subtotal
+                </div>
+                <div class = 'col-md-6 text-center'>".
+                    $subtotal . "
+                </div>
+            </div>
+        ";
+
+        }
+    }
+
+
+
+
+?>
+
+
+
 
 
 

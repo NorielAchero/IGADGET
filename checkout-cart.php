@@ -54,7 +54,7 @@
        
               
             <?php
-            getTableById($_GET['id']);
+            checkout();
             ?>
 
     </div>
@@ -62,9 +62,9 @@
 </html>
 
 <?php
-     function getTableById($recno) {
+     function checkout() {
         include("admin/includes/sqlconnection.php");
-        $sql = "SELECT * FROM prodtable WHERE id='$recno'";
+        $sql = "SELECT * FROM cart ";
         $result = $conn->query($sql);
 
         function getRandDiscount($number) {
@@ -72,8 +72,17 @@
         }
 
         if ($result->num_rows > 0) {
+            $itemCount = 0;
+            $allTotalItemPrice = 0;
+
             while ($row = $result->fetch_assoc()) {
-                echo"
+                
+                $itemCount++;
+                $allTotalItemPrice = $allTotalItemPrice + $row['price'];
+
+            }
+
+            echo"
                 <p style = 'font-weight: bolder;'>Purchase Summary</p>
                 <div class = 'summary'>
                     <div class='row details'>
@@ -81,7 +90,7 @@
                             <p style='margin: 0;'>Item Count</p>
                         </div>
                         <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>1</p>
+                            <p style='margin: 0;'>".  $itemCount ."</p>
                         </div>
                     </div>
                     <div class='row details'>
@@ -97,7 +106,7 @@
                             <p style='margin: 0;'>All Item Total Price</p>
                         </div>
                         <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>". $row['price']  . "</p>
+                            <p style='margin: 0;'>". $allTotalItemPrice . "</p>
                         </div>
                     </div>
                     <div class='row details'>
@@ -105,7 +114,7 @@
                             <p style='margin: 0;'>Discount</p>
                         </div>
                         <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>".$discount = getRandDiscount(0.3 * $row['price']) ." </p>
+                            <p style='margin: 0;'>".$discount = getRandDiscount(0.3 * $allTotalItemPrice) ." </p>
                         </div>
                     </div>
                 </div>";
@@ -120,7 +129,7 @@
                         <p style='margin: 0;'>TOTAL</p>
                     </div>
                     <div class='col-xs-6 text-right'>
-                        <p style='margin: 0;'>". ($row['price'] * 1) +  $numericValue1 -  $numericValue2 . "</p>
+                        <p style='margin: 0;'>". ($allTotalItemPrice * $itemCount) +  $numericValue1 -  $numericValue2 . "</p>
                     </div>
                 </div>
     
@@ -131,8 +140,6 @@
                 </div>
 
                 ";
-
-            }
         }
 
         

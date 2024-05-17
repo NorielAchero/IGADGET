@@ -83,7 +83,50 @@
                         echo "<td>".$row['category']."</td>";
                         echo "<td>
                                 <a href='edit_prodtable.php?id=".$row['id']."' class='btn btn-primary'>Edit</a>
-                                <a href='controller.php?table=prodtable&id=".$row['id']."' class='btn btn-danger'>Delete</a></td>";
+                                <a href='controller.php?control=false&table=prodtable&id=".$row['id']."' class='btn btn-danger'>Delete</a></td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7'>No records found</td></tr>"; 
+                }
+                $conn->close();
+                ?>
+            </tbody>
+        </table>
+
+        <h2>CART</h2>
+        <a href="insert_cart.php" class="btn btn-info">Insert to Cart </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>prodid</th>
+                    <th>prodname</th>
+                    <th>prodname</th>
+                    <th>price</th>
+                    <th>image</th>
+                    <th>category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include("includes/sqlconnection.php");
+                $sql = "SELECT * FROM cart";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>".$row['id']."</td>";
+                        echo "<td>".$row['prodid']."</td>";
+                        echo "<td>".$row['prodname']."</td>";
+                        echo "<td>".$row['proddesc']."</td>";
+                        echo "<td>".$row['price']."</td>";
+                        echo "<td><img src='uploads/".$row['image']."' width='100'></td>";
+                        echo "<td>".$row['category']."</td>";
+                        echo "<td>
+                                <a href='edit_cart.php?id=".$row['id']."' class='btn btn-primary'>Edit</a>
+                                <a href='controller.php?control=false&table=cart&id=".$row['id']."' class='btn btn-danger'>Delete</a></td>";
                         echo "</tr>";
                     }
                 } else {

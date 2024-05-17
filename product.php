@@ -62,10 +62,15 @@
     function getTableById($recno) {
         include("admin/includes/sqlconnection.php");
         $sql = "SELECT * FROM prodtable WHERE id='$recno'";
+       
+
         $result = $conn->query($sql);
+
+
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
+
                 echo "
                         <div class='col-md-8'>
                         <div class='container1'>
@@ -80,9 +85,18 @@
                             <h3>" . $row['proddesc'] . " </h3>
                             <h4>" . $row['price'] . "</h4>
                             <a href='checkout-single.php?id=".$row['id']."' class = 'button1'> BUY </a>
-                            <button class='button2'>ADD TO CART</button>
+                            <form action='admin/controller.php' method='post' enctype='multipart/form-data'>
+                                <input type='hidden' name='txtprodid' value='".$row['id']."'>
+                                <input type='hidden' name='txtprodname' value='".$row['prodname']."'>
+                                <input type='hidden' name='txtproddesc' value='".$row['proddesc']."'>
+                                <input type='hidden' name='txtprice' value='".$row['price']."'>
+                                <input type='hidden' name='txtimage' value='".$row['image']."'>
+                                <input type='hidden' name='txtcategory' value='".$row['category']."'>
+                                <button type='submit' name='save_cartprod' class='button2'>ADD TO CART</button>
+                            </form>
                         </div>
                     </div>
+                    
                     ";
             }
         } else {
