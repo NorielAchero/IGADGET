@@ -29,10 +29,10 @@
             
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="category.html">Categories</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="category.php">Categories</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
@@ -48,25 +48,49 @@
 
     <div class="center-div">
         <div class="row">
-            <div class="col-md-8">
-                <div class="container1">
-                    <button class="btn">BACK</button>
-                        <img src="image/laptop.png">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="container2">
-                    <br>
-                    <h1 class="text">Product Name</h1>
-                    <h3>Product Description</h3>
-                    <h4>Product Price</h4>
-                    <button class="button1">BUY</button>
-                    <button class="button2">ADD TO CART</button>
-                </div>
-            </div>
+            <?php
+               getTableById($_GET['id']);
+            ?>
         </div>
     </div>
 
     
 </body>
 </html>
+
+<?php
+    function getTableById($recno) {
+        include("admin/includes/sqlconnection.php");
+        $sql = "SELECT * FROM prodtable WHERE id='$recno'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "
+                        <div class='col-md-8'>
+                        <div class='container1'>
+                            <button class='btn'>BACK</button>
+                                <img src='admin/uploads/" . $row['image'] . "'>
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <div class='container2'>
+                            <br>
+                            <h1 class='text'>" .$row['prodname']  . "</h1>
+                            <h3>" . $row['proddesc'] . " </h3>
+                            <h4>" . $row['price'] . "</h4>
+                            <button class='button1'>BUY</button>
+                            <button class='button2'>ADD TO CART</button>
+                        </div>
+                    </div>
+                    ";
+            }
+        } else {
+            echo "Error Buwaha";
+        }
+
+    }
+
+
+
+?>

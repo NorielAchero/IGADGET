@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <title>E-Commerce Website</title>
+    <title>I-GADGET</title>
 </head>
 <body class="animate__animated animate__bounceIn">
 
@@ -28,10 +28,10 @@
         
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="category.html">Categories</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="category.php">Categories</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
             </ul>
 
@@ -101,7 +101,7 @@
                     <img src="image/1.jpg" class="card-img-top" alt="Mobile Phone">
                     <div class="card-body">
                       <h5 class="card-title">Mobile Phone</h5>
-                      <a href="category.html" class="btn btn-primary">Explore</a> 
+                      <a href="category.php" class="btn btn-primary">Explore</a> 
                     </div>
                   </div>
             
@@ -109,7 +109,7 @@
                     <img src="image/2.jpg" class="card-img-top" alt="Card Image">
                     <div class="card-body">
                       <h5 class="card-title">Personal Computer</h5>
-                      <a href="category.html" class="btn btn-primary">Explore</a> 
+                      <a href="pc.php" class="btn btn-primary">Explore</a> 
                     </div>
                   </div>
             
@@ -117,7 +117,7 @@
                     <img src="image/3.jpg" class="card-img-top" alt="Personal Computer">
                     <div class="card-body">
                       <h5 class="card-title">Laptop</h5>
-                      <a href="category.html" class="btn btn-primary">Explore</a> 
+                      <a href="laptop.php" class="btn btn-primary">Explore</a> 
                     </div>
                   </div>
             
@@ -125,7 +125,7 @@
                     <img src="image/4.jpg" class="card-img-top" alt="Laptop">
                     <div class="card-body">
                       <h5 class="card-title">Consoles</h5>
-                      <a href="category.html" class="btn btn-primary">Explore</a> 
+                      <a href="console.php" class="btn btn-primary">Explore</a> 
                     </div>
                   </div>
             
@@ -133,7 +133,7 @@
                     <img src="image/5.jpg" class="card-img-top" alt="Consoles">
                     <div class="card-body">
                       <h5 class="card-title">Tablet</h5>
-                      <a href="category.html" class="btn btn-primary">Explore</a> 
+                      <a href="tablet.php" class="btn btn-primary">Explore</a> 
                     </div>
                   </div>
                 </div>

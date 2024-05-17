@@ -35,10 +35,10 @@
             
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="category.html">Categories</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="category.php">Categories</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
