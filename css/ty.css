@@ -1,0 +1,64 @@
+
+html {
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: white;
+    background-image: linear-gradient(to bottom left, #23176c, #be3398);
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+    min-height: 100vh;
+}
+
+.center-div {
+    min-height: 70%;
+    max-width: 80%;
+    width: 500px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0.842);
+    border-radius: 10px; 
+    padding: 30px;  
+    color: rgba(0, 0, 0, 0.781);
+}
+
+
+.checkout{
+    background-color: #D6CCFE;
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #AA93F3; 
+}
+
+.checkout:hover{
+    opacity: 80%;
+}
+
+.checkout:active{
+    opacity: 80%;
+    transform: translateY(4px);
+}
+
+.remove {
+background-color: transparent;
+border: none;
+padding: 0;
+}
+
+.remove:hover{
+    opacity: 80%;
+}
+
+.remove:active{
+    opacity: 80%;
+    transform: translateY(4px);
+    border: none;
+}

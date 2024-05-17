@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    color: white;
+    background-image: linear-gradient(to bottom left, #23176c, #be3398);
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+    min-height: 100vh;
+}
+
+.navbar{
+    min-height: 70px;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+}
+
+.navbar-toggle .icon-bar{
+    background-color: white;
+    margin-top: 15px;
+    width: 30px;
+    height: 3px;
+}
+
+.form-inline{
+    margin-top: 21px;
+}
+
+.form-control{
+    background-color: #202020;
+    color: white;
+    border-color: #202020;
+}
+
+.form-control::placeholder {
+    color: #8b7cb6;
+}
+
+.input-group-addon{
+    background-color: #202020;
+    border-color: #202020;
+}
+
+.glyphicon-search{
+    color: #8b7cb6;
+}
+
+.navbar-brand{
+    color: white;
+    margin-top: 15px;
+    margin-right: 20px;
+    font-size: 30px;
+    padding-left: 50px;
+    font-weight: 700;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+.navbar-brand:hover {
+    color: white; 
+    text-decoration: none; 
+}
+
+#mynavbar ul li a{
+    color: white;
+    font-size: 15px;
+    margin-top: 18px;
+    margin-right: 20px;
+    margin-left: 5px;
+    padding: 10px 20px;
+}
+
+#mynavbar ul li a:hover{
+    background-color: #250b2c;
+    border-radius: 15px;
+}
+
+#mynavbar ul li.active a {
+    background-color: #250b2c;
+    color: #000;
+    border-radius: 15px;
+}
+
+
+
+footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+}

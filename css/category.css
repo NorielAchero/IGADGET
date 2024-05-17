@@ -1,0 +1,53 @@
+#category{
+    padding-top: 5px;
+}
+
+.navbar-category{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+#navbar-category ul li a{
+    color: white;
+    margin-top: 15px;
+    margin-right: 15px;
+    padding: 15px 30px;
+}
+
+#navbar-category ul li a:hover{
+    background-color: #250b2c;
+    border-radius: 15px;
+}
+
+#navbar-category ul li.active a {
+    background-color: #250b2c;
+    border-radius: 15px;
+}
+
+.thumbnail{
+    background-color: #250b2c;
+    border-color: #250b2c;
+    border-radius: 20px;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.thumbnail img{
+    width: 60%;
+    height: auto;
+}
+
+.thumbnail .caption{
+    color: white;
+    font-size: 11px;
+    text-align: justify;
+}
+
+.thumbnail .caption a{
+    color: white; 
+    text-decoration: none; 
+}

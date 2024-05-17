@@ -1,0 +1,41 @@
+#contact{
+    padding-top: 60px;
+    margin-bottom: 10px;
+}
+
+#contact hr{
+    width: 55%;
+}
+
+#contact h1{
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+#contact .btn{
+    background-color:#250b2c;
+}
+
+#contact .btn:hover{
+    background-color:#8b7cb6;
+    color: #000;
+}
+
+#members{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#members img{
+    max-width: 125px;
+    height: auto;
+    border-radius: 50%;
+    margin: 15px;
+}
+
+#members p{
+    text-align: center;
+    margin-top: -5px;
+}
