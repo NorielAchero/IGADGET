@@ -131,7 +131,7 @@
 
         <div class="row" style="margin-top: 70px;">
             <div class="col-md-12 text-center">
-                <button class="btn checkout" onclick="window.location.href='checkout.html';">Proceed to Checkout</button>
+                <button class="btn checkout" onclick="window.location.href='checkout.php';">Proceed to Checkout</button>
             </div>
         </div>
 

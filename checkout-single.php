@@ -51,7 +51,7 @@
     </nav>
 
     <div class="center-div">
-        <p style = "font-weight: bolder;">Purchase Summary</p>
+        <!-- <p style = "font-weight: bolder;">Purchase Summary</p>
             <div class = "summary">
                 <div class="row details">
                     <div class="col-xs-6">
@@ -100,8 +100,93 @@
                 <div class="col-md-12 text-center">
                     <button class="btn checkout" onclick="window.location.href='ty.php';">Place Order</button>
                 </div>
-            </div>
+            </div> -->
+            <?php
+            getTableById($_GET['id']);
+            ?>
 
     </div>
 </body>
 </html>
+
+<?php
+     function getTableById($recno) {
+        include("admin/includes/sqlconnection.php");
+        $sql = "SELECT * FROM prodtable WHERE id='$recno'";
+        $result = $conn->query($sql);
+
+        function getRandDiscount($number) {
+            return rand(1, $number);
+        }
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo"
+                <p style = 'font-weight: bolder;'>Purchase Summary</p>
+                <div class = 'summary'>
+                    <div class='row details'>
+                        <div class='col-xs-6'>
+                            <p style='margin: 0;'>Item Count</p>
+                        </div>
+                        <div class='col-xs-6 text-right'>
+                            <p style='margin: 0;'>1</p>
+                        </div>
+                    </div>
+                    <div class='row details'>
+                        <div class='col-xs-6'>
+                            <p style='margin: 0;'>Shipping Fee</p>
+                        </div>
+                        <div class='col-xs-6 text-right'>
+                            <p style='margin: 0;'>". $shippingFee = 350.00 . "</p>
+                        </div>
+                    </div>
+                    <div class='row details'>
+                        <div class='col-xs-6'>
+                            <p style='margin: 0;'>All Item Total Price</p>
+                        </div>
+                        <div class='col-xs-6 text-right'>
+                            <p style='margin: 0;'>". $row['price']  . "</p>
+                        </div>
+                    </div>
+                    <div class='row details'>
+                        <div class='col-xs-6'>
+                            <p style='margin: 0;'>Discount</p>
+                        </div>
+                        <div class='col-xs-6 text-right'>
+                            <p style='margin: 0;'>".$discount = getRandDiscount(0.3 * $row['price']) ." </p>
+                        </div>
+                    </div>
+                </div>";
+
+
+                $numericValue1 = floatval($shippingFee);
+                $numericValue2 = floatval($discount);
+    
+            echo "
+                <div class='row details'>
+                    <div class='col-xs-6'>
+                        <p style='margin: 0;'>TOTAL</p>
+                    </div>
+                    <div class='col-xs-6 text-right'>
+                        <p style='margin: 0;'>". ($row['price'] * 1) +  $numericValue1 -  $numericValue2 . "</p>
+                    </div>
+                </div>
+    
+                <div class='row' style='margin-top: 30px;'>
+                    <div class='col-md-12 text-center'>
+                        <button class='btn checkout' onclick='window.location.href='ty.php';'>Place Order</button> 
+                    </div>
+                </div>
+          
+
+                ";
+
+            }
+        }
+
+        
+     }
+
+
+
+?>

@@ -79,7 +79,7 @@
                             <h1 class='text'>" .$row['prodname']  . "</h1>
                             <h3>" . $row['proddesc'] . " </h3>
                             <h4>" . $row['price'] . "</h4>
-                            <button class='button1'>BUY</button>
+                            <a href='checkout-single.php?id=".$row['id']."' class = 'button1'> BUY </a>
                             <button class='button2'>ADD TO CART</button>
                         </div>
                     </div>
