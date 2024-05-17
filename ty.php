@@ -69,7 +69,7 @@
 
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-12 text-center">
-                <button class="btn checkout" onclick="window.location.href='index.html';">Confirm</button>
+                <button class="btn checkout" onclick="window.location.href='index.php';">Confirm</button>
             </div>
         </div>
     </div>

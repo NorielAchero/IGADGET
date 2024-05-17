@@ -110,6 +110,7 @@
                     </div>
                 </div>";
 
+
                 $numericValue1 = floatval($shippingFee);
                 $numericValue2 = floatval($discount);
     
@@ -125,10 +126,10 @@
     
                 <div class='row' style='margin-top: 30px;'>
                     <div class='col-md-12 text-center'>
-                    <a class='btn checkout' href='ty.php'>Place Order</a> 
+                        <a class='btn checkout' href='ty.php'>Place Order</a> 
                     </div>
                 </div>
-          
+
                 ";
 
             }
