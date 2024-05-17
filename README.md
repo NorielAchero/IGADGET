@@ -10,3 +10,20 @@ If you want to edit, create your own database. Follow these names of db and tabl
 If you want to load the data (no images included in the CSV), you can run the 'admin/insert.php' in the URL (auto import of CSV file to the table).
 
 
+## Instructions for Angelica 
+
+- Yung pop up anmination ng buong body ay pakitanggal.  Dahil medyo nakakahilo. - Gawin na lang yung fadeUp sa kada divs ng products etc.
+- Paki-ayos po yung layout ng product page. Sorry may nagalaw ako kaya naligaw yung button haha
+- Paki-ayos ang footer
+- Pakitanggal na po yung log out button
+
+
+
+
+## Instructions for Angelo
+
+- Paki ayos yung formting ng prices gawing double. Two decimal places. May checkout-cart. paki-ayos nalang
+
+
+
+
