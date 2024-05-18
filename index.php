@@ -151,6 +151,12 @@
     var startX;
     var scrollLeft;
 
+    // para pag nagload ung site automatic naka scroll up na, kasi pag pinindot ung scroll down at nireload ung site, nasa baba siya or kung nasan siya last nandon
+     // nilagay ko lang to para pag nagload ung site, automatic nasa taas, tanggalin niyo nalang if panget hehe 
+    window.onload = function() {
+      window.scrollTo(0, 0);
+    };
+
     document.getElementById('scrollable-cards').addEventListener('mousedown', function(e) {
         isDown = true;
         startX = e.pageX - this.offsetLeft;
