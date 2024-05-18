@@ -58,7 +58,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>EDIT PRODUCTS</h1>
+        <h1><strong>EDIT PRODUCTS</strong></h1>
         <form action="controller.php" method="POST" enctype="multipart/form-data">
             <?php 
                 getTableById($_GET['id']);

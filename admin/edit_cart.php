@@ -60,7 +60,7 @@
 <body>
     <!-- Your existing HTML content -->
     <div class="container">
-        <h1>EDIT CART</h1>
+        <h1><strong>EDIT CART</strong></h1>
         <form action="controller.php" method="POST" enctype="multipart/form-data">
             <?php 
                 getTableById($_GET['id']);
