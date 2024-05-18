@@ -78,7 +78,7 @@
 
                     <div class='form-group'>
                     <label>PRODUCT NAME: </label>
-                    <input type='text' name='txtprodname' placeholder='".$row['prodname']. "' class='form-control' >
+                    <input type='text' name='txtprodname' placeholder='".$row['prodname']. "'placeholder='".$row['prodname']. "' class='form-control' >
                 </div>
     
                 <div class='form-group'>
