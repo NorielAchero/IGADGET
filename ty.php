@@ -63,7 +63,7 @@
         </div>
         <div class="row" style="margin-top: 20px;">
             <div class="col-xs-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, nec arcu molestie, mollis purus sit amet, sodales libero.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur admollis purus sit amet, sodales libero.</p>
             </div>
         </div>
 
