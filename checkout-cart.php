@@ -124,7 +124,7 @@ function checkout() {
 
         $shippingFee = 350.00;
         $discount = getRandDiscount(0.3 * $allTotalItemPrice);
-        $total = ($allTotalItemPrice * $itemCount) + $shippingFee - $discount;
+        $total = ($allTotalItemPrice  + $shippingFee)- $discount;
 
         echo "
         <div class='row details'>
