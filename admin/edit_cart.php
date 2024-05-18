@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Noriel Achero</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Cart</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel = "icon" href="uploads/icon.png">
+    <link rel="stylesheet" href="../css/homeStyle.css"> <!-- Include homeStyle.css -->
+    <link rel="icon" href="uploads/icon.png">
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.js"></script>
     <style>
+        /* Your existing styles */
         body {
             background-color: rgb(22, 22, 22);
             color: #ffffff; /* Light text color */
@@ -21,7 +26,7 @@
             text-align: center; /* Center align headings */
         }
         form {
-            background-color: rgb(37, 37, 37);
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
             padding: 20px;
             border: 2px solid #ffffff; /* Form border color */
             box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1); /* Form shadow */
@@ -53,13 +58,14 @@
     </style>
 </head>
 <body>
+    <!-- Your existing HTML content -->
     <div class="container">
-        <h1>EDIT PRODUCT TABLE</h1>
+        <h1>EDIT CART</h1>
         <form action="controller.php" method="POST" enctype="multipart/form-data">
             <?php 
                 getTableById($_GET['id']);
             ?>
-            <button type="submit" class="btn btn-primary" name="update_cart">UPDATE PRODUCT</button>
+            <button type="submit" class="btn btn-primary" name="update_cart">UPDATE CART</button>
         </form>
     </div>
 </body>
