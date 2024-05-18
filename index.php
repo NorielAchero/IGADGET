@@ -11,9 +11,12 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+
+
+
     <title>I-GADGET</title>
 </head>
-<body class="animate__animated animate__bounceIn">
+<body>
 
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
@@ -46,7 +49,7 @@
 </nav>
 
         <section id="home" class="home">
-            <aside class="col-md-4">
+            <aside class="col-md-4 animate__animated animate__fadeInUp" style = "animation-delay: 0.2s;">
               <div class="carousel slide" data-ride="carousel" id="c1">
                 <ol class="carousel-indicators">
                     <li data-target="#c1" data-slide-to="0"></li>
@@ -80,7 +83,7 @@
               </div>
             </aside>
 
-            <header class="col-md-5">
+            <header class="col-md-5 animate__animated animate__fadeInUp" style = "animation-delay: 0.4s;">
               <div class="content">
                   <h1 class="title">WELCOME</h1>
                   <p class="description">Welcome to iGadget!, your one-stop shop for all things tech! We offer a wide range of high-quality laptops, mobile phones, PCs, tablets, 
@@ -93,11 +96,11 @@
 
         <section id="categories" class="home">
             <div class="container">
-              <h1>Categories</h1>
-              <p>Explore Our Products</p>
+              <h1 class = "animate__animated animate__fadeInUp" style = "animation-delay: 0.3s;">Categories</h1>
+              <p class = "animate__animated animate__fadeInUp" style = "animation-delay: 0.4s;">Explore Our Products</p>
               
                 <div class="scrollable-cards" id="scrollable-cards">
-                  <div class="card">
+                  <div class="card animate__animated animate__fadeInUp" style = "animation-delay: 0.5s;">
                     <img src="image/1.jpg" class="card-img-top" alt="Mobile Phone">
                     <div class="card-body">
                       <h5 class="card-title">Mobile Phone</h5>
@@ -105,7 +108,7 @@
                     </div>
                   </div>
             
-                  <div class="card">
+                  <div class="card animate__animated animate__fadeInUp" style = "animation-delay: 0.6s;">
                     <img src="image/2.jpg" class="card-img-top" alt="Card Image">
                     <div class="card-body">
                       <h5 class="card-title">Personal Computer</h5>
@@ -113,7 +116,7 @@
                     </div>
                   </div>
             
-                  <div class="card">
+                  <div class="card animate__animated animate__fadeInUp" style = "animation-delay: 0.7s;">
                     <img src="image/3.jpg" class="card-img-top" alt="Personal Computer">
                     <div class="card-body">
                       <h5 class="card-title">Laptop</h5>
@@ -121,7 +124,7 @@
                     </div>
                   </div>
             
-                  <div class="card">
+                  <div class="card animate__animated animate__fadeInUp" style = "animation-delay: 0.8s;">
                     <img src="image/4.jpg" class="card-img-top" alt="Laptop">
                     <div class="card-body">
                       <h5 class="card-title">Consoles</h5>
@@ -129,7 +132,7 @@
                     </div>
                   </div>
             
-                  <div class="card">
+                  <div class="card animate__animated animate__fadeInUp" style = "animation-delay: 0.9s;">
                     <img src="image/5.jpg" class="card-img-top" alt="Consoles">
                     <div class="card-body">
                       <h5 class="card-title">Tablet</h5>
