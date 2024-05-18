@@ -63,7 +63,7 @@
         </div>
         <div class="row" style="margin-top: 20px;">
             <div class="col-xs-12">
-                <p>Lorem ipsum dolor sit amet, consectetur admollis purus sit amet, sodales libero.</p>
+                <p>Thank you for choosing us; we're honored to have the opportunity to serve you.</p>
             </div>
         </div>
 
