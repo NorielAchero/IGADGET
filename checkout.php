@@ -14,10 +14,9 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/checkout.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <title>Checkout Page</title>
-
 </head>
 <body class="animate__animated animate__bounceIn">
     <nav class="navbar navbar-fixed-top">
@@ -33,13 +32,12 @@
             
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="category.php">Categories</a></li>
-                <li><a href="cart.php">Cart</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="category.php">Categories</a></li>
+                    <li><a href="cart.php">Cart</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
-
                 <div class="nav navbar-nav form-inline navbar-right">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search">
@@ -51,57 +49,56 @@
     </nav>
 
     <div class="center-div">
-        <p style = "font-weight: bolder;">Purchase Summary</p>
-            <div class = "summary">
-                <div class="row details">
-                    <div class="col-xs-6">
-                        <p style="margin: 0;">Item Count</p>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p style="margin: 0;">100</p>
-                    </div>
-                </div>
-                <div class="row details">
-                    <div class="col-xs-6">
-                        <p style="margin: 0;">Shipping Fee</p>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p style="margin: 0;">PHP 100</p>
-                    </div>
-                </div>
-                <div class="row details">
-                    <div class="col-xs-6">
-                        <p style="margin: 0;">All Item Total Price</p>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p style="margin: 0;">PHP 100000</p>
-                    </div>
-                </div>
-                <div class="row details">
-                    <div class="col-xs-6">
-                        <p style="margin: 0;">Discount</p>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p style="margin: 0;">PHP 500</p>
-                    </div>
-                </div>
-            </div>
-
+        <p style="font-weight: bolder;">Purchase Summary</p>
+        <div class="summary">
             <div class="row details">
                 <div class="col-xs-6">
-                    <p style="margin: 0;">TOTAL</p>
+                    <p style="margin: 0;">Item Count</p>
                 </div>
                 <div class="col-xs-6 text-right">
-                    <p style="margin: 0;">4565400</p>
+                    <p style="margin: 0;">100</p>
                 </div>
             </div>
-
-            <div class="row" style="margin-top: 30px;">
-                <div class="col-md-12 text-center">
-                    <button class="btn checkout" onclick="window.location.href='ty.php';">Place Order</button>
+            <div class="row details">
+                <div class="col-xs-6">
+                    <p style="margin: 0;">Shipping Fee</p>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <p style="margin: 0;">₱<?php echo number_format(100, 2); ?></p>
                 </div>
             </div>
+            <div class="row details">
+                <div class="col-xs-6">
+                    <p style="margin: 0;">All Item Total Price</p>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <p style="margin: 0;">₱<?php echo number_format(100000, 2); ?></p>
+                </div>
+            </div>
+            <div class="row details">
+                <div class="col-xs-6">
+                    <p style="margin: 0;">Discount</p>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <p style="margin: 0;">₱<?php echo number_format(500, 2); ?></p>
+                </div>
+            </div>
+        </div>
 
+        <div class="row details">
+            <div class="col-xs-6">
+                <p style="margin: 0;">TOTAL</p>
+            </div>
+            <div class="col-xs-6 text-right">
+                <p style="margin: 0;">₱<?php echo number_format(4565400, 2); ?></p>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-12 text-center">
+                <button class="btn checkout" onclick="window.location.href='ty.php';">Place Order</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

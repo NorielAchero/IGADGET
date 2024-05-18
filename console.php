@@ -78,38 +78,32 @@
 
 <?php
 
-    function printProducts(){
-        include("admin/includes/sqlconnection.php");
+function printProducts(){
+    include("admin/includes/sqlconnection.php");
 
-        $sql = "SELECT * FROM prodtable WHERE category = 'console'";
+    $sql = "SELECT * FROM prodtable WHERE category = 'console'";
 
-        $result = $conn->query($sql);
+    $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $formattedPrice = '₱' . number_format($row['price'], 2);
 
-            while ($row = $result->fetch_assoc()) {
-
-                
-                echo"
-                <div class='col-md-4'>
-                    <div class='thumbnail'>
-                        <img src='admin/uploads/". $row['image']. "'>
-                        <div class='caption'>
-                            <h4><a href='product.php?id=".$row['id']."'>". $row["prodname"]. "</a></h4>
-                            
-                                <b>". $row["price"] . "</b>
-                                <p>". $row["proddesc"] . "</p>
-                                
-                        </div>
+            echo "
+            <div class='col-md-4'>
+                <div class='thumbnail'>
+                    <img src='admin/uploads/" . $row['image'] . "'>
+                    <div class='caption'>
+                        <h4><a href='product.php?id=" . $row['id'] . "'>" . $row["prodname"] . "</a></h4>
+                        <b>" . $formattedPrice . "</b>
+                        <p>" . $row["proddesc"] . "</p>
                     </div>
                 </div>
-                ";
-            }
+            </div>
+            ";
         }
-
-        else{
-            // Do Nothing haha
-        }
+    } else {
+        //wutdahek
     }
-
+}
 ?>

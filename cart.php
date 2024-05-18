@@ -72,67 +72,60 @@
 
 
 <?php
-    function cart(){
-        include("admin/includes/sqlconnection.php");
+function cart() {
+    include("admin/includes/sqlconnection.php");
 
-        $sql = "SELECT * FROM cart";
+    $sql = "SELECT * FROM cart";
+    $result = $conn->query($sql);
 
-        $result = $conn->query($sql);
+    $subtotal = 0.00;
 
-        $subtotal = 0.00;
-
-        if ($result->num_rows > 0) {
-
-            while ($row = $result->fetch_assoc()) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
             $subtotal = $subtotal + $row['price'];
-                echo "
-                <div class='row prod d-flex align-items-center'>
-            <div class='col-md-4 text-center'>
-                <div class='product-images'>
-                    <img src='admin/uploads/". $row['image']. "' alt='Product Image'>
+            echo "
+            <div class='row prod d-flex align-items-center'>
+                <div class='col-md-4 text-center'>
+                    <div class='product-images'>
+                        <img src='admin/uploads/". $row['image']. "' alt='Product Image'>
+                    </div>
                 </div>
-            </div>
-            <div class='col-md-8 desc mx-auto'>
-                <div class='product-description'>
-                    <p style = 'font-size: large;'><b>" . $row['prodname'] . " </b></p>
-                    <p>" . $row['proddesc'] . "</p>
-                    <p>" . $row['category'] . "</p>
-                    <p>" . $row['id'] . "</p>
-                    <div class='row'>
-                        <div class='col-xs-6'>
-                            <a class='btn btn-delete' href = 'admin/controller.php?control=true&table=cart&id=".$row['id']."'><span class='glyphicon glyphicon-trash'></span> Delete</a>
-                        </div>
-                        <div class='col-xs-6 text-right'>
-                            <p>" . $row['price'] . "</p>
+                <div class='col-md-8 desc mx-auto'>
+                    <div class='product-description'>
+                        <p style='font-size: large;'><b>" . $row['prodname'] . " </b></p>
+                        <p>" . $row['proddesc'] . "</p>
+                        <p>" . $row['category'] . "</p>
+                        <p>" . $row['id'] . "</p>
+                        <div class='row'>
+                            <div class='col-xs-6'>
+                                <a class='btn btn-delete' href='admin/controller.php?control=true&table=cart&id=".$row['id']."'><span class='glyphicon glyphicon-trash'></span> Delete</a>
+                            </div>
+                            <div class='col-xs-6 text-right'>
+                                <p>₱" . number_format($row['price'], 2) . "</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-                
-                ";
-
-
-            }
-
-            echo"
-                <div class = 'row row-prod' style=' margin-top: 20px;'>
-                <div class = 'col-md-6 text-center'>
-                Subtotal
-                </div>
-                <div class = 'col-md-6 text-center'>".
-                    $subtotal . "
-                </div>
-            </div>
-        ";
-
+            ";
         }
+
+        echo "
+        <div class='row row-prod' style='margin-top: 20px;'>
+            <div class='col-md-6 text-center'>
+                Subtotal
+            </div>
+            <div class='col-md-6 text-center'>
+                ₱" . number_format($subtotal, 2) . "
+            </div>
+        </div>
+        ";
+    } else {
+        echo "<p>No items in the cart.</p>";
     }
-
-
-
-
+}
 ?>
+
 
 
 

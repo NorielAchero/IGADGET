@@ -33,10 +33,10 @@
             
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="category.php">Categories</a></li>
-                <li><a href="cart.php">Cart</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="category.php">Categories</a></li>
+                    <li><a href="cart.php">Cart</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
@@ -51,31 +51,32 @@
     </nav>
 
     <div class="center-div">
-       
-              
-            <?php
+        <?php
             getTableById($_GET['id']);
-            ?>
-
+        ?>
     </div>
 </body>
 </html>
 
 <?php
-     function getTableById($recno) {
-        include("admin/includes/sqlconnection.php");
-        $sql = "SELECT * FROM prodtable WHERE id='$recno'";
-        $result = $conn->query($sql);
+function getTableById($recno) {
+    include("admin/includes/sqlconnection.php");
+    $sql = "SELECT * FROM prodtable WHERE id='$recno'";
+    $result = $conn->query($sql);
 
-        function getRandDiscount($number) {
-            return rand(1, $number);
-        }
+    function getRandDiscount($number) {
+        return rand(1, $number);
+    }
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo"
-                <p style = 'font-weight: bolder;'>Purchase Summary</p>
-                <div class = 'summary'>
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $shippingFee = 350.00;
+            $discount = getRandDiscount(0.3 * $row['price']);
+            $totalPrice = ($row['price'] + $shippingFee - $discount);
+
+            echo "
+                <p style='font-weight: bolder;'>Purchase Summary</p>
+                <div class='summary'>
                     <div class='row details'>
                         <div class='col-xs-6'>
                             <p style='margin: 0;'>Item Count</p>
@@ -89,7 +90,7 @@
                             <p style='margin: 0;'>Shipping Fee</p>
                         </div>
                         <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>". $shippingFee = 350.00 . "</p>
+                            <p style='margin: 0;'>₱" . number_format($shippingFee, 2) . "</p>
                         </div>
                     </div>
                     <div class='row details'>
@@ -97,7 +98,7 @@
                             <p style='margin: 0;'>All Item Total Price</p>
                         </div>
                         <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>". $row['price']  . "</p>
+                            <p style='margin: 0;'>₱" . number_format($row['price'], 2) . "</p>
                         </div>
                     </div>
                     <div class='row details'>
@@ -105,38 +106,29 @@
                             <p style='margin: 0;'>Discount</p>
                         </div>
                         <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>".$discount = getRandDiscount(0.3 * $row['price']) ." </p>
+                            <p style='margin: 0;'>₱" . number_format($discount, 2) . "</p>
                         </div>
                     </div>
-                </div>";
+                </div>
 
-                $numericValue1 = floatval($shippingFee);
-                $numericValue2 = floatval($discount);
-    
-            echo "
                 <div class='row details'>
                     <div class='col-xs-6'>
                         <p style='margin: 0;'>TOTAL</p>
                     </div>
                     <div class='col-xs-6 text-right'>
-                        <p style='margin: 0;'>". ($row['price'] * 1) +  $numericValue1 -  $numericValue2 . "</p>
+                        <p style='margin: 0;'>₱" . number_format($totalPrice, 2) . "</p>
                     </div>
                 </div>
-    
+
                 <div class='row' style='margin-top: 30px;'>
                     <div class='col-md-12 text-center'>
-                    <a class='btn checkout' href='ty.php'>Place Order</a> 
+                        <a class='btn checkout' href='ty.php'>Place Order</a> 
                     </div>
                 </div>
-          
-                ";
-
-            }
+            ";
         }
-
-        
-     }
-
-
-
+    } else {
+        echo "<p>No product found.</p>";
+    }
+}
 ?>

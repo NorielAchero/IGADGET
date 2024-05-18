@@ -62,89 +62,85 @@
 </html>
 
 <?php
-     function checkout() {
-        include("admin/includes/sqlconnection.php");
-        $sql = "SELECT * FROM cart ";
-        $result = $conn->query($sql);
+function checkout() {
 
-        function getRandDiscount($number) {
-            return rand(1, $number);
+    //para matago ung error about Deprecated: Implicit conversion from float since gumagana naman function pero may nagpriprint na error
+    error_reporting(0);
+    ini_set('display_errors', 0);
+
+    include("admin/includes/sqlconnection.php");
+    $sql = "SELECT * FROM cart ";
+    $result = $conn->query($sql);
+
+    function getRandDiscount($number) {
+        return rand(1, $number);
+    }
+
+    if ($result->num_rows > 0) {
+        $itemCount = 0;
+        $allTotalItemPrice = 0;
+
+        while ($row = $result->fetch_assoc()) {
+            $itemCount++;
+            $allTotalItemPrice = $allTotalItemPrice + $row['price'];
         }
 
-        if ($result->num_rows > 0) {
-            $itemCount = 0;
-            $allTotalItemPrice = 0;
-
-            while ($row = $result->fetch_assoc()) {
-                
-                $itemCount++;
-                $allTotalItemPrice = $allTotalItemPrice + $row['price'];
-
-            }
-
-            echo"
-                <p style = 'font-weight: bolder;'>Purchase Summary</p>
-                <div class = 'summary'>
-                    <div class='row details'>
-                        <div class='col-xs-6'>
-                            <p style='margin: 0;'>Item Count</p>
-                        </div>
-                        <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>".  $itemCount ."</p>
-                        </div>
-                    </div>
-                    <div class='row details'>
-                        <div class='col-xs-6'>
-                            <p style='margin: 0;'>Shipping Fee</p>
-                        </div>
-                        <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>". $shippingFee = 350.00 . "</p>
-                        </div>
-                    </div>
-                    <div class='row details'>
-                        <div class='col-xs-6'>
-                            <p style='margin: 0;'>All Item Total Price</p>
-                        </div>
-                        <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>". $allTotalItemPrice . "</p>
-                        </div>
-                    </div>
-                    <div class='row details'>
-                        <div class='col-xs-6'>
-                            <p style='margin: 0;'>Discount</p>
-                        </div>
-                        <div class='col-xs-6 text-right'>
-                            <p style='margin: 0;'>".$discount = getRandDiscount(0.3 * $allTotalItemPrice) ." </p>
-                        </div>
-                    </div>
-                </div>";
-
-
-                $numericValue1 = floatval($shippingFee);
-                $numericValue2 = floatval($discount);
-    
-            echo "
-                <div class='row details'>
-                    <div class='col-xs-6'>
-                        <p style='margin: 0;'>TOTAL</p>
-                    </div>
-                    <div class='col-xs-6 text-right'>
-                        <p style='margin: 0;'>". ($allTotalItemPrice * $itemCount) +  $numericValue1 -  $numericValue2 . "</p>
-                    </div>
+        echo "
+        <p style='font-weight: bolder;'>Purchase Summary</p>
+        <div class='summary'>
+            <div class='row details'>
+                <div class='col-xs-6'>
+                    <p style='margin: 0;'>Item Count</p>
                 </div>
-    
-                <div class='row' style='margin-top: 30px;'>
-                    <div class='col-md-12 text-center'>
-                        <a class='btn checkout' href='ty.php'>Place Order</a> 
-                    </div>
+                <div class='col-xs-6 text-right'>
+                    <p style='margin: 0;'>$itemCount</p>
                 </div>
+            </div>
+            <div class='row details'>
+                <div class='col-xs-6'>
+                    <p style='margin: 0;'>Shipping Fee</p>
+                </div>
+                <div class='col-xs-6 text-right'>
+                    <p style='margin: 0;'>₱" . number_format(350.00, 2) . "</p>
+                </div>
+            </div>
+            <div class='row details'>
+                <div class='col-xs-6'>
+                    <p style='margin: 0;'>All Item Total Price</p>
+                </div>
+                <div class='col-xs-6 text-right'>
+                    <p style='margin: 0;'>₱" . number_format($allTotalItemPrice, 2) . "</p>
+                </div>
+            </div>
+            <div class='row details'>
+                <div class='col-xs-6'>
+                    <p style='margin: 0;'>Discount</p>
+                </div>
+                <div class='col-xs-6 text-right'>
+                    <p style='margin: 0;'>₱" . number_format(getRandDiscount(0.3 * $allTotalItemPrice), 2) . "</p>
+                </div>
+            </div>
+        </div>";
 
-                ";
-        }
+        $shippingFee = 350.00;
+        $discount = getRandDiscount(0.3 * $allTotalItemPrice);
+        $total = ($allTotalItemPrice * $itemCount) + $shippingFee - $discount;
 
-        
-     }
+        echo "
+        <div class='row details'>
+            <div class='col-xs-6'>
+                <p style='margin: 0;'>TOTAL</p>
+            </div>
+            <div class='col-xs-6 text-right'>
+                <p style='margin: 0;'>₱" . number_format($total, 2) . "</p>
+            </div>
+        </div>
 
-
-
+        <div class='row' style='margin-top: 30px;'>
+            <div class='col-md-12 text-center'>
+                <a class='btn checkout' href='ty.php'>Place Order</a> 
+            </div>
+        </div>";
+    }
+}
 ?>
