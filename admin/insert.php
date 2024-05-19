@@ -22,7 +22,6 @@ if (($handle = fopen($csvFile, "r")) !== FALSE) {
         $prodname = $data[1];
         $proddesc = $data[2];
         $price = $data[3];
-        echo "Price haha $price";
         $image = $data[4];
         $category = $data[5];
 
