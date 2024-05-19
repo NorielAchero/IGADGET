@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel = "icon" href="image/icon.jpg">
-    <title>Phone</title>
+    <title>Search</title>
 </head>
 <body>
     <nav class="navbar navbar-fixed-top">
@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="category.php" class="active">Categories</a></li>
+                <li><a href="category.php">Categories</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="admin/index.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
@@ -49,11 +49,11 @@
     </nav>
     
     <section id="category">
-        <nav class="navbar-category">
+    <nav class="navbar-category">
             <div class="container-fluid">
                 <div id="navbar-category">
                     <ul class="nav navbar-nav">
-                        <li><a href="category.php" class="active">Mobile Phone</a></li>
+                        <li><a href="category.php">Mobile Phone</a></li>
                         <li><a href="pc.php">PC</a></li>
                         <li><a href="laptop.php">Laptop</a></li>
                         <li><a href="console.php">Consoles</a></li>
@@ -62,11 +62,50 @@
                 </div>
             </div>
         </nav>
-    
         <div class="container">
+
+        
                 <?php
 
-                printProducts();
+                    $con = mysqli_connect("localhost","root","","ecommerce");
+
+                    if(isset($_GET['search']))
+                    {
+                        $filtervalues = $_GET['search'];
+                        include("admin/includes/sqlconnection.php");
+
+
+                        $sql = "SELECT * FROM prodtable WHERE CONCAT(prodname, proddesc, category) LIKE '%$filtervalues%' ";
+
+                        $result = $conn->query($sql);
+
+                        echo "<h2 class = 'text-center' style = 'margin-bottom: 20px;'>Search Results for '". $filtervalues . "' </h2>";
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $formattedPrice = number_format($row['price'], 2);
+
+                                echo"
+                                <a href='product.php?id=" . $row['id'] . "'>
+                                    <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
+                                        <div class='thumbnail'>
+                                            <img src='admin/uploads/" . $row['image'] . "'>
+                                            <div class='caption'>
+                                                <h4><a href='product.php?id=" . $row['id'] . "'>" . $row['prodname'] . "</a></h4>
+                                                <b>₱" . $formattedPrice . "</b>
+                                                <p>" . $row['proddesc'] . "</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                
+                                ";
+
+                            }
+                        } else {
+                            echo "<p class = 'text-center'>No Available Products</p>";
+                        }
+                    }
 
 
                 ?>   
@@ -81,10 +120,11 @@
 
 <?php
 
-function printProducts(){
+function printProducts($filtervalues){
     include("admin/includes/sqlconnection.php");
 
-    $sql = "SELECT * FROM prodtable WHERE category = 'phone'";
+
+    $sql = "SELECT * FROM prodtable WHERE CONCAT(prodname, proddesc, category) LIKE '%$filtervalues%' ";
 
     $result = $conn->query($sql);
 
@@ -105,7 +145,10 @@ function printProducts(){
                     </div>
                 </div>
             </a>
+
             ";
+
+            echo " $filtervalues" ;
         }
     } else {
         echo "No Available Products";

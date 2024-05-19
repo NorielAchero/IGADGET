@@ -36,12 +36,16 @@
                 <li><a href="admin/index.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
-            <div class="nav navbar-nav form-inline navbar-right">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <div class="nav navbar-nav form-inline navbar-right">
+                    <div class="input-group">
+                        <form action="search.php" method="GET">
+                            <input type="text" name="search" required value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" class="form-control" placeholder="Search Product">
+                            <button type="submit" class="btn search-btn">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </nav>
