@@ -89,6 +89,7 @@ function printProducts(){
             $formattedPrice = number_format($row['price'], 2);
 
             echo"
+            <a href='product.php?id=" . $row['id'] . "'>
             <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
                 <div class='thumbnail'>
                     <img src='admin/uploads/" . $row['image'] . "'>
@@ -99,6 +100,7 @@ function printProducts(){
                     </div>
                 </div>
             </div>
+            </a>
             ";
         }
     } else {
