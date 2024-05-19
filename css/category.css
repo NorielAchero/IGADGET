@@ -57,5 +57,8 @@
     text-align: justify;
 }
 
-
+.active{
+    background-color: #250b2c;
+    border-radius: 15px;
+}
 

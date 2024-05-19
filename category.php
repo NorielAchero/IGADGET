@@ -49,7 +49,7 @@
             <div class="container-fluid">
                 <div id="navbar-category">
                     <ul class="nav navbar-nav">
-                        <li><a href="category.php">Mobile Phone</a></li>
+                    <li><a href="category.php" class="active">Mobile Phone</a></li>
                         <li><a href="pc.php">PC</a></li>
                         <li><a href="laptop.php">Laptop</a></li>
                         <li><a href="console.php">Consoles</a></li>
