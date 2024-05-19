@@ -78,13 +78,10 @@ body{
     border-radius: 15px;
 }
 
-#mynavbar ul li.active a {
+.active{
     background-color: #250b2c;
-    color: #000;
     border-radius: 15px;
 }
-
-
 
 footer{
     padding-top: 10px;

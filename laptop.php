@@ -51,7 +51,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="category.php">Mobile Phone</a></li>
                         <li><a href="pc.php">PC</a></li>
-                        <li><a href="laptop.php">Laptop</a></li>
+                        <li><a href="laptop.php" class="active">Laptop</a></li>
                         <li><a href="console.php">Consoles</a></li>
                         <li><a href="tablet.php">Tablet</a></li>
                     </ul>
@@ -90,16 +90,18 @@ function printProducts(){
             $formattedPrice = '₱' . number_format($row['price'], 2);
 
             echo"
-            <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
-                <div class='thumbnail'>
-                    <img src='admin/uploads/" . $row['image'] . "'>
-                    <div class='caption'>
-                        <h4><a href='product.php?id=" . $row['id'] . "'>" . $row['prodname'] . "</a></h4>
-                        <b>" . $formattedPrice . "</b>
-                        <p>" . $row['proddesc'] . "</p>
+            <a href='product.php?id=" . $row['id'] . "'>
+                <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
+                    <div class='thumbnail'>
+                        <img src='admin/uploads/" . $row['image'] . "'>
+                        <div class='caption'>
+                            <h4><a href='product.php?id=" . $row['id'] . "'>" . $row['prodname'] . "</a></h4>
+                            <b>" . $formattedPrice . "</b>
+                            <p>" . $row['proddesc'] . "</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             ";
         }
     } else {

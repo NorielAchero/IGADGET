@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="category.php">Categories</a></li>
+                <li><a href="category.php" class="active">Categories</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="admin/index.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
@@ -49,7 +49,7 @@
             <div class="container-fluid">
                 <div id="navbar-category">
                     <ul class="nav navbar-nav">
-                    <li><a href="category.php" class="active">Mobile Phone</a></li>
+                        <li><a href="category.php" class="active">Mobile Phone</a></li>
                         <li><a href="pc.php">PC</a></li>
                         <li><a href="laptop.php">Laptop</a></li>
                         <li><a href="console.php">Consoles</a></li>
@@ -90,16 +90,16 @@ function printProducts(){
 
             echo"
             <a href='product.php?id=" . $row['id'] . "'>
-            <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
-                <div class='thumbnail'>
-                    <img src='admin/uploads/" . $row['image'] . "'>
-                    <div class='caption'>
-                        <h4><a href='product.php?id=" . $row['id'] . "'>" . $row['prodname'] . "</a></h4>
-                        <b>" . $formattedPrice . "</b>
-                        <p>" . $row['proddesc'] . "</p>
+                <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
+                    <div class='thumbnail'>
+                        <img src='admin/uploads/" . $row['image'] . "'>
+                        <div class='caption'>
+                            <h4><a href='product.php?id=" . $row['id'] . "'>" . $row['prodname'] . "</a></h4>
+                            <b>" . $formattedPrice . "</b>
+                            <p>" . $row['proddesc'] . "</p>
+                        </div>
                     </div>
                 </div>
-            </div>
             </a>
             ";
         }

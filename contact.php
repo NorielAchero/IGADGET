@@ -30,7 +30,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="category.php">Categories</a></li>
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="contact.php" class="active">Contact Us</a></li>
                 <li><a href="admin/index.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
@@ -74,30 +74,40 @@
         </div>
 
         <div class="container animate__animated animate__fadeInUp" style="animation-delay: 0.2s;" id="members">
-            <div class="person" id="person-div">
+            <div class="person">
                 <img src="image/noy.png" alt="noy">
-                <p style = "font-weight: bold;">Noriel Achero</p>
-                <p style = "font-size: 11px;">PM / Lead Back-end Dev</p>
+                <div class="caption">
+                    <p class="name">Noriel Achero</p>
+                    <p>Project Manager <br> Lead Back-End Developer</p>
+                </div>
             </div>
             <div class="person">
                 <img src="image/hana.jpg" alt="noy">
-                <p style = "font-weight: bold;">Hannah Condada</p>
-                <p style = "font-size: small;">UI Design / Front-end Dev</p>
+                <div class="caption">
+                    <p class="name">Hannah Condada</p>
+                    <p>UI Design <br> Front-End Developer</p>
+                </div>
             </div>
             <div class="person">
                 <img src="image/cesar.jpg" alt="noy">
-                <p style = "font-weight: bold;">Cesar Julius Jimenez</p>
-                <p>Front-end Dev</p>
+                <div class="caption">
+                    <p class="name">Cesar Julius Jimenez</p>
+                    <p>Front-End Developer</p>
+                </div>
             </div>
             <div class="person">
                 <img src="image/gelo.png" alt="noy">
-                <p style = "font-weight: bold;">Angelo Mallari</p>
-                <p>Back-end Dev</p> 
+                <div class="caption">
+                    <p class="name">Angelo Mallari</p>
+                    <p>Back-End Developer</p> 
+                </div>
             </div>
             <div class="person">
                 <img src="image/angel.jpg" alt="noy">
-                <p style = "font-weight: bold;">Angelica Mae Manliguez</p>
-                <p>Lead Front-end Dev</p>
+                <div class="caption">
+                    <p class="name">Angelica Mae Manliguez</p>
+                    <p>Lead Front-End Developer</p>
+                </div>
             </div>
         </div>
 	</section>
