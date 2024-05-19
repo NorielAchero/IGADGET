@@ -10,7 +10,8 @@
     <script src="js/bootstrap.js"></script>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+    <link rel = "icon" href="image/icon.jpg">
+    <link rel = "icon" href="image/icon.jpg">
     <title>iGADGET</title>
 </head>
 <body>

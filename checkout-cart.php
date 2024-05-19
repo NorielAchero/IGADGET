@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/checkout.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+    <link rel = "icon" href="image/icon.jpg">
     <title>Checkout Page</title>
 
 </head>
@@ -83,6 +83,9 @@ function checkout() {
             $allTotalItemPrice = $allTotalItemPrice + $row['price'];
         }
 
+        $shippingFee = 350.00;
+        $discount = getRandDiscount(0.2 * $allTotalItemPrice);
+
         echo "
         <p style='font-weight: bolder;'>Purchase Summary</p>
         <div class='summary'>
@@ -115,14 +118,13 @@ function checkout() {
                     <p style='margin: 0;'>Discount</p>
                 </div>
                 <div class='col-xs-6 text-right'>
-                    <p style='margin: 0;'>₱" . number_format(getRandDiscount(0.3 * $allTotalItemPrice), 2) . "</p>
+                    <p style='margin: 0;'>₱" . number_format($discount, 2) . "</p>
                 </div>
             </div>
         </div>";
 
-        $shippingFee = 350.00;
-        $discount = getRandDiscount(0.3 * $allTotalItemPrice);
-        $total = ($allTotalItemPrice  + $shippingFee)- $discount;
+        $total1 = $allTotalItemPrice  + $shippingFee;
+        $total2 = $total1 - $discount;
 
         echo "
         <div class='row details'>
@@ -130,7 +132,7 @@ function checkout() {
                 <p style='margin: 0;'>TOTAL</p>
             </div>
             <div class='col-xs-6 text-right'>
-                <p style='margin: 0;'>₱" . number_format($total, 2) . "</p>
+                <p style='margin: 0;'>₱" . number_format($total2, 2) . "</p>
             </div>
         </div>
 

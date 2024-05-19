@@ -10,6 +10,7 @@
     <script src="js/bootstrap.js"></script>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel = "icon" href="image/icon.jpg">
     <title>Product Page</title>
 </head>
 <body>
@@ -67,13 +68,13 @@ function getTableById($recno) {
             $formattedPrice = '₱' . number_format($row['price'], 2);
 
             echo "
-                <div class='col-md-8'>
+                <div class='col-md-8 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
                     <div class='container1'>
                         <button class='btn' onclick='goBack()'>BACK</button>
                         <img src='admin/uploads/" . $row['image'] . "' alt='" . $row['prodname'] . "'>
                     </div>
                 </div>
-                <div class='col-md-4'>
+                <div class='col-md-4  animate__animated animate__fadeInUp' style='animation-delay: 0.3s;'>
                     <div class='container2'>
                         <h1>" . $row['prodname'] . "</h1>
                         <p>" . $row['proddesc'] . "</p>
@@ -88,10 +89,10 @@ function getTableById($recno) {
                                 <input type='hidden' name='txtprice' value='" . $row['price'] . "'>
                                 <input type='hidden' name='txtimage' value='" . $row['image'] . "'>
                                 <input type='hidden' name='txtcategory' value='" . $row['category'] . "'>
-                            </form>
+                            
                             <button type='submit' name='save_cartprod' class='button2'>ADD TO CART</button>
+                            </form>
                         </div>
-                    
                 </div>
             ";
         }

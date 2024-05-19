@@ -137,7 +137,7 @@
         <!-- Navigation -->
         <h2><strong>PRODUCT</strong></h2>
         <a href="insert_prodtable.php" class="btn btn-info">Insert Product </a>
-        <br>
+        <br> 
         <br>
         <table class="table">
             <thead>
@@ -213,8 +213,7 @@
                         echo "<td><img src='uploads/".$row['image']."' width='100'></td>";
                         echo "<td>".$row['category']."</td>";
                         echo "<td>
-                                <a href='edit_cart.php?id=".$row['id']."' class='btn btn
-                                -primary'>Edit</a>
+                                <a href='edit_cart.php?id=".$row['id']."' class='btn btn-primary'>Edit</a>
                                 <a href='controller.php?control=false&table=cart&id=".$row['id']."' class='btn btn-danger'>Delete</a></td>";
                         echo "</tr>";
                     }

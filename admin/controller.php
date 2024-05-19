@@ -175,7 +175,7 @@
 			$sql_content = "INSERT INTO cart(prodid, prodname, proddesc, price, image, category)
 			VALUES ('$prodid', '$prodname', '$proddesc' , '$price', '$image', '$category' )";
 
-			$location = 'location:../product.php?id=' . $prodid . '';
+			$location = 'location:../cart.php';
 
 			if ($conn->query($sql_content) === TRUE) {
 				$id = $conn->insert_id;

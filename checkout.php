@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/checkout.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
+    <link rel = "icon" href="image/icon.jpg">
     <title>Checkout Page</title>
 </head>
 <body class="animate__animated animate__bounceIn">

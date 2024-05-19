@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/cart.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel = "icon" href="image/icon.jpg">
     <title>Cart Page</title>
 
 </head>
@@ -95,7 +96,6 @@ function cart() {
                         <p style='font-size: large;'><b>" . $row['prodname'] . " </b></p>
                         <p>" . $row['proddesc'] . "</p>
                         <p>" . $row['category'] . "</p>
-                        <p>" . $row['id'] . "</p>
                         <div class='row'>
                             <div class='col-xs-6'>
                                 <a class='btn btn-delete' href='admin/controller.php?control=true&table=cart&id=".$row['id']."'><span class='glyphicon glyphicon-trash'></span> Delete</a>
