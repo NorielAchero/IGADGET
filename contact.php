@@ -64,7 +64,7 @@
                 </div>
                     
                 <div class="form-group">
-                    <textarea class="form-control" rows="10">Comments</textarea>
+                    <textarea class="form-control" rows="10" placeholder = "Comments"></textarea>
                 </div>
                     
                 <div class="form-group">
