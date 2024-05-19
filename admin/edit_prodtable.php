@@ -82,17 +82,17 @@
 
                     <div class='form-group'>
                     <label>PRODUCT NAME: </label>
-                    <input type='text' name='txtprodname' placeholder='".$row['prodname']. "'placeholder='".$row['prodname']. "' class='form-control' >
+                    <input type='text' name='txtprodname' value = '".$row['prodname']. "' placeholder='".$row['prodname']. "'placeholder='".$row['prodname']. "' class='form-control' >
                 </div>
     
                 <div class='form-group'>
                     <label>PRODUCT DECRIPTION: </label>
-                    <input type='text' name='txtproddesc' placeholder='".$row['proddesc']."'class='form-control'>
+                    <input type='text' name='txtproddesc' value = '".$row['proddesc']. "'placeholder='".$row['proddesc']."'class='form-control'>
                 </div>
     
                 <div class='form-group'>
                     <label>PRODUCT PRICE: </label>
-                    <input type='text' name='txtprice' placeholder='".$row['price']." 'class='form-control'>
+                    <input type='text' name='txtprice' value = '".$row['price']. "'placeholder='".$row['price']." 'class='form-control'>
                 </div>
                     <div class='form-group'>
                         <label>Image:</label>
