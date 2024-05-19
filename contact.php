@@ -13,7 +13,7 @@
 
     <title>Contact Page</title>
 </head>
-<body class="animate__animated animate__bounceIn">
+<body>
     <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -49,7 +49,7 @@
         <h1>Contact Us</h1>
         <hr>
 
-        <div class='row justify-content-center'>
+        <div class='row justify-content-center animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
             <form class="col-md-6 col-md-offset-3">
                 <div class="form-group">
                     <input class="form-control" placeholder="Enter Your Name" type="text"/>
@@ -73,7 +73,7 @@
             </form>
         </div>
 
-        <div class="container" id="members">
+        <div class="container animate__animated animate__fadeInUp" style="animation-delay: 0.2s;" id="members">
             <div class="person">
                 <img src="image/noy.png" alt="noy">
                 <p>Noriel Achero</p>
@@ -87,7 +87,7 @@
                 <p>Cesar Jimenez</p>
             </div>
             <div class="person">
-                <img src="image/noy.png" alt="noy">
+                <img src="image/gelo.png" alt="noy">
                 <p>Angelo Mallari</p>
             </div>
             <div class="person">
