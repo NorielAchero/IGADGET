@@ -26,7 +26,7 @@
         body {
             min-height: 100vh;
             background-image: linear-gradient(to bottom left, #23176c, #be3398);
-            color: #f5f5f5;
+            color: white;
         }
 
         /* Login container styles */
@@ -40,12 +40,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: auto;
             margin-top: 70px;
+            color: white;
         }
 
         /* Heading styles */
         .login-container h2 {
             margin-bottom: 20px;
-            color: #d858ff;
+            color: white;
             font-weight: bold;
             text-align: center;
             font-size: 2.5rem;
@@ -53,7 +54,7 @@
 
         /* Form group styles */
         .form-group label {
-            color: #ffffff;
+            color: white;
             font-weight: bold;
         }
 
@@ -61,7 +62,7 @@
         .form-control {
             background-color: #5936b2;
             border-color: #ffffff;
-            color: #ffffff;
+            color: white;
         }
 
         /* Button styles */
@@ -108,7 +109,7 @@
             </div>
             <button type="submit" class="btn btn-block">Login</button>
         </form>
-        <p>admin123</p>
+        <!-- <p>admin123</p> -->
     </div>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

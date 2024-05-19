@@ -31,7 +31,7 @@
                 <li><a href="category.php">Categories</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+                <li><a href="admin/index.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
                 <div class="nav navbar-nav form-inline navbar-right">

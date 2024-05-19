@@ -19,7 +19,7 @@
     <title>Checkout Page</title>
 
 </head>
-<body class="animate__animated animate__bounceIn">
+<body>
     <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -32,12 +32,12 @@
             </div>
             
             <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="category.php">Categories</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+                <li><a href="admin/index.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
                 </ul>
 
                 <div class="nav navbar-nav form-inline navbar-right">
@@ -49,10 +49,8 @@
             </div>
         </div>
     </nav>
-
-    <div class="center-div">
+    <div class="center-div animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
        
-              
             <?php
             checkout();
             ?>
