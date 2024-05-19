@@ -36,6 +36,11 @@
     padding: 12px;
 }
 
+.thumbnail:hover{
+    border: none;
+    scale: 1.1;
+}
+
 .thumbnail img{
     width: 60%;
     height: auto;
@@ -57,5 +62,8 @@
     text-align: justify;
 }
 
-
+.active{
+    background-color: #250b2c;
+    border-radius: 15px;
+}
 
