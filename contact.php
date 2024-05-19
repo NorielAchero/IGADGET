@@ -74,25 +74,30 @@
         </div>
 
         <div class="container animate__animated animate__fadeInUp" style="animation-delay: 0.2s;" id="members">
-            <div class="person">
+            <div class="person" id="person-div">
                 <img src="image/noy.png" alt="noy">
-                <p>Noriel Achero</p>
+                <p style = "font-weight: bold;">Noriel Achero</p>
+                <p style = "font-size: 11px;">PM / Lead Back-end Dev</p>
             </div>
             <div class="person">
                 <img src="image/hana.jpg" alt="noy">
-                <p>Hannah Condada</p>
+                <p style = "font-weight: bold;">Hannah Condada</p>
+                <p style = "font-size: small;">UI Design / Front-end Dev</p>
             </div>
             <div class="person">
                 <img src="image/cesar.jpg" alt="noy">
-                <p>Cesar Jimenez</p>
+                <p style = "font-weight: bold;">Cesar Julius Jimenez</p>
+                <p>Front-end Dev</p>
             </div>
             <div class="person">
                 <img src="image/gelo.png" alt="noy">
-                <p>Angelo Mallari</p>
+                <p style = "font-weight: bold;">Angelo Mallari</p>
+                <p>Back-end Dev</p> 
             </div>
             <div class="person">
                 <img src="image/angel.jpg" alt="noy">
-                <p>Angelica Mae Manliguez</p>
+                <p style = "font-weight: bold;">Angelica Mae Manliguez</p>
+                <p>Lead Front-end Dev</p>
             </div>
         </div>
 	</section>
