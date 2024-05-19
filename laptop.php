@@ -13,7 +13,7 @@
 
     <title>Laptop</title>
 </head>
-<body class="animate__animated animate__bounceIn">
+<body>
     <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -90,7 +90,7 @@ function printProducts(){
             $formattedPrice = '₱' . number_format($row['price'], 2);
 
             echo"
-            <div class='col-md-4'>
+            <div class='col-md-4 animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
                 <div class='thumbnail'>
                     <img src='admin/uploads/" . $row['image'] . "'>
                     <div class='caption'>

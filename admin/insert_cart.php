@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Noriel Achero</title>
+    <title>Insert Cart</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel = "icon" href="uploads/icon.png">
+    <link rel="stylesheet" href="../css/homeStyle.css"> <!-- Include homeStyle.css -->
+    <link rel="icon" href="uploads/icon.png">
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.js"></script>
     <style>
@@ -22,7 +23,7 @@
             text-align: center; /* Center align headings */
         }
         form {
-            background-color: rgb(37, 37, 37);
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
             padding: 20px;
             border: 2px solid #ffffff; /* Form border color */
             box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1); /* Form shadow */
@@ -95,7 +96,7 @@
                     <option value="tablet">Tablet</option>
                 </select>
             </div>
-            <button type="submit" name="save_cart" class="btn btn-success">Save Product</button>
+            <button type="submit" name="save_cart" class="btn btn-success">Save Cart</button>
         </form>
     </div>
 </body>

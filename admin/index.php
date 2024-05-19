@@ -1,74 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel = "icon" href="uploads/icon.png">
+    <link rel="icon" href="uploads/icon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Google Fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap">
     <!-- Custom CSS -->
     <style>
-        body {
-            background-color: rgb(22, 22, 22);
-            color: white;
-            font-family: "Barlow", sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* Importing Google Fonts - Poppins */
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+        /* Resetting default styles */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+
+        /* Body styles */
+        body {
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom left, #23176c, #be3398);
+            color: #f5f5f5;
+        }
+
+        /* Login container styles */
         .login-container {
             max-width: 500px;
             width: 60%;
             padding: 20px;
-            border: 1px solid white;
+            border: 1px solid #ffffff;
             border-radius: 12px;
-            background-color: rgb(37, 37, 37);
-            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+            background-color: #5936b2;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 70px;
         }
+
+        /* Heading styles */
         .login-container h2 {
             margin-bottom: 20px;
-            color: white;
+            color: #d858ff;
             font-weight: bold;
             text-align: center;
+            font-size: 2.5rem;
         }
+
+        /* Form group styles */
         .form-group label {
-            color: white;
+            color: #ffffff;
             font-weight: bold;
         }
+
+        /* Form control styles */
         .form-control {
-            background-color: rgb(37, 37, 37);
-            border-color: white;
-            color: white;
+            background-color: #5936b2;
+            border-color: #ffffff;
+            color: #ffffff;
         }
+
+        /* Button styles */
         .btn {
-            background-color: white;
-            border-color: white;
+            background-color: #ffffff;
+            border-color: #ffffff;
             font-weight: bold;
-            color: rgb(22, 22, 22);
+            color: #5936b2;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
         }
+
         .btn:hover {
             background-color: #FD6262;
             border-color: #FD6262;
-            color: white;
+            color: #ffffff;
         }
-        .btn:active {
-            background-color: #FD6262;
-            border-color: #FD6262;
-            color: white;
-        }
+
+        .btn:active,
         .btn:focus {
             background-color: #FD6262;
             border-color: #FD6262;
-            box-shadow: 0 0 0 0.2rem rgba(253, 98, 98, 0.5);
-            color: white;
+            color: #ffffff;
         }
+
+        /* Paragraph styles */
         p {
-            color: white;
+            color: #ffffff;
             text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -86,7 +108,6 @@
             </div>
             <button type="submit" class="btn btn-block">Login</button>
         </form>
-        <br>
         <p>admin123</p>
     </div>
     <!-- Bootstrap JS -->

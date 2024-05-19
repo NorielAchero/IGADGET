@@ -18,7 +18,7 @@
     <title>Cart Page</title>
 
 </head>
-<body class="animate__animated animate__bounceIn">
+<body>
     <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -61,7 +61,7 @@
 
 
         <div class="row" style="margin-top: 70px;">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                 <button class="btn checkout" onclick="window.location.href='checkout-cart.php';">Proceed to Checkout</button>
             </div>
         </div>
@@ -84,7 +84,7 @@ function cart() {
         while ($row = $result->fetch_assoc()) {
             $subtotal = $subtotal + $row['price'];
             echo "
-            <div class='row prod d-flex align-items-center'>
+            <div class='row prod d-flex align-items-center animate__animated animate__fadeInUp' style='animation-delay: 0.2s;'>
                 <div class='col-md-4 text-center'>
                     <div class='product-images'>
                         <img src='admin/uploads/". $row['image']. "' alt='Product Image'>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Product Page</title>
 </head>
-<body class="animate__animated animate__bounceIn">
+<body>
     <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -48,6 +48,9 @@
             ?>
         </div>
     </div>
+    <footer>
+        <p>© 2024 iGadget. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
@@ -72,21 +75,23 @@ function getTableById($recno) {
                 </div>
                 <div class='col-md-4'>
                     <div class='container2'>
-                        <br>
-                        <h1 class='text'>" . $row['prodname'] . "</h1>
-                        <h3>" . $row['proddesc'] . "</h3>
-                        <h4>" . $formattedPrice . "</h4>
-                        <a href='checkout-single.php?id=" . $row['id'] . "' class='button1'>BUY</a>
-                        <form action='admin/controller.php' method='post' enctype='multipart/form-data'>
-                            <input type='hidden' name='txtprodid' value='" . $row['id'] . "'>
-                            <input type='hidden' name='txtprodname' value='" . $row['prodname'] . "'>
-                            <input type='hidden' name='txtproddesc' value='" . $row['proddesc'] . "'>
-                            <input type='hidden' name='txtprice' value='" . $row['price'] . "'>
-                            <input type='hidden' name='txtimage' value='" . $row['image'] . "'>
-                            <input type='hidden' name='txtcategory' value='" . $row['category'] . "'>
-                            <button type='submit' name='save_cartprod' class='button2'>ADD TO CART</button>
-                        </form>
+                        <h1>" . $row['prodname'] . "</h1>
+                        <p>" . $row['proddesc'] . "</p>
+                        <h4>Price: ". $formattedPrice . "</h4>
                     </div>
+                        <div class='button-container'>
+                            <a href='checkout-single.php?id=" . $row['id'] . "' class='button1'>BUY</a>
+                            <form action='admin/controller.php' method='post' enctype='multipart/form-data'>
+                                <input type='hidden' name='txtprodid' value='" . $row['id'] . "'>
+                                <input type='hidden' name='txtprodname' value='" . $row['prodname'] . "'>
+                                <input type='hidden' name='txtproddesc' value='" . $row['proddesc'] . "'>
+                                <input type='hidden' name='txtprice' value='" . $row['price'] . "'>
+                                <input type='hidden' name='txtimage' value='" . $row['image'] . "'>
+                                <input type='hidden' name='txtcategory' value='" . $row['category'] . "'>
+                            </form>
+                            <button type='submit' name='save_cartprod' class='button2'>ADD TO CART</button>
+                        </div>
+                    
                 </div>
             ";
         }

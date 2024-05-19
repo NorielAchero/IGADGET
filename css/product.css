@@ -1,8 +1,8 @@
 body {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
     color: white;
     background-image: linear-gradient(to bottom left, #23176c, #be3398);
     font-family: 'Poppins';
@@ -13,6 +13,7 @@ body {
 .center-div {
     width: 100%;
     margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .container1 {
@@ -20,12 +21,32 @@ body {
 }
 
 .container2 {
-    margin-top: 50px;
-    text-align: center;
+    padding: 10px 50px;
+    margin-top: 80px;
     background-color: #23176c;
-    height: 700px;
+    height: 650px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+}
+
+.container2 h1{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.container2 p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.container2 h4{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 60px;
+    font-weight: 500;
 }
 
 img{
@@ -46,17 +67,24 @@ img{
     cursor: pointer;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    margin-top: -100px;
+}
+
 .button1, .button2 {
     padding: 15px 50px;
-    margin-top: 20px; /* Adjust margin top as needed */
-    background-color: rgba(26,18,76,255); /* Color of back button */
+    background-color: rgba(26,18,76,255);
     color: #fff;
     text-decoration: none;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 420px;
 }
+
 
 .btn:hover {
     background-color: #8484a4;
@@ -64,9 +92,10 @@ img{
 
 .button1:hover, .button2:hover {
     background-color: #352d51;
+    text-decoration: none;
+    color: #ffffff;
 }
 
-.text {
-    margin-top: 20px;
-    font-size: 40px;
+footer{
+    margin-top: 50px;
 }

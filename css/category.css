@@ -33,7 +33,7 @@
     height: 400px;
     overflow: hidden;
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 12px;
 }
 
 .thumbnail img{
@@ -41,13 +41,18 @@
     height: auto;
 }
 
-.thumbnail .caption{
-    color: white;
-    font-size: 11px;
-    text-align: justify;
-}
-
 .thumbnail .caption a{
     color: white; 
     text-decoration: none; 
+}
+
+.thumbnail .caption b{
+    color: white;
+    font-size: 15px;
+}
+
+.thumbnail .caption p{
+    color: white;
+    font-size: 13px;
+    text-align: justify;
 }
