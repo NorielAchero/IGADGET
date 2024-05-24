@@ -44,8 +44,8 @@ http://igadget.rf.gd/ (use VPN if the site doesn't load)
 
 ## Contributors
 
-- Noriel Achero (https://github.com/NorielAchero)- Project Manager / Lead Back-End Developer <br>
-- Hannah Condada (https://github.com/hannahcondada)- UI Design / Front-End Developer <br>
+- Noriel Achero (https://github.com/NorielAchero) - Project Manager / Lead Back-End Developer <br>
+- Hannah Condada (https://github.com/hannahcondada) - UI Design / Front-End Developer <br>
 - Cesar Julius Jimenez (https://github.com/cesarjuliusjimenez) - Front-End Developer <br>
 - Angelo Gerard Mallari (https://github.com/angewonk) - Back-End Developer <br>
 - Angelica Mae Manliguez (https://github.com/angelicamanliguez) - Lead Front-End Developer <br>
